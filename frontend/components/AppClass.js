@@ -12,29 +12,39 @@ export default class AppClass extends React.Component {
       email: '',
       message: ''
       }
+  
+  this.handleChange = this.handleChange.bind(this);
+  this.handleSubmit = this.handleSubmit.bind(this);
+
   }
-  increment = evt => {
+  increment = () => {
     this.setState((state) => ({
       ...state,
       steps: state.steps + 1
     }))
   }
-  reset = evt => {
+  reset = () => {
     this.setState((state) => ({
       ...state,
       steps: 0
     }))
   }
-  getResults = () => {
-    axios.get(URL)
-      .then(res => {
-        debugger
-      })
-      .catch(err => {
-        debugger
-      })
+  // getApiResults = () => {
+  //   axios.get(URL)
+  //     .then(res => {
+  //       console.log(res)
+  //     })
+  //     .catch(err => {
+  //       console.log(err)
+  //     })
+  // }
+  handleChange(event) {
+    this.setState({email: event.target.value})
   }
-      
+  handleSubmit(event) {
+    event.preventDefault()
+    this.state.value
+  }   
   render() {
     const { className } = this.props
       return (
@@ -64,9 +74,17 @@ export default class AppClass extends React.Component {
           <button onClick={this.increment}id="down">DOWN</button>
           <button onClick={this.reset}id="reset">reset</button>
         </div>
-        <form>
-          <input id="email" type="email" placeholder="type email"></input>
-          <input id="submit" type="submit"></input>
+        <form onSubmit={this.handleSubmit}>
+          <input 
+            value={this.state.email} 
+            onChange={this.handleChange} id="email"
+            type="email" 
+            placeholder="type email">
+            </input>
+          <input 
+            id="submit" 
+            type="submit">
+            </input>
         </form>
       </div>
     )
