@@ -12,10 +12,6 @@ export default class AppClass extends React.Component {
       email: '',
       message: ''
       }
-  
-  this.handleChange = this.handleChange.bind(this);
-  this.handleSubmit = this.handleSubmit.bind(this);
-
   }
   increment = () => {
     this.setState((state) => ({
@@ -38,12 +34,14 @@ export default class AppClass extends React.Component {
   //       console.log(err)
   //     })
   // }
-  handleChange(event) {
-    this.setState({email: event.target.value})
+  handleChange = (event) => {
+    this.setState({
+      email: event.target.value
+    })
+    
   }
   handleSubmit(event) {
     event.preventDefault()
-    this.state.value
   }   
   render() {
     const { className } = this.props
