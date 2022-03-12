@@ -1,5 +1,5 @@
-import React from 'react'
 import axios from 'axios'
+import React from 'react'
 
 const URL = 'http://localhost:9000/api/result'
 
@@ -25,8 +25,18 @@ export default class AppClass extends React.Component {
       steps: 0
     }))
   }
+  // postApiResults = () => {
+  //   axios.post(URL)
+  //     .then(res => {
+  //       console.log(res)
+  //     })
+  //     .catch(err => {
+  //       console.log(err)
+  //     })
+  // }
+
   // getApiResults = () => {
-  //   axios.get(URL)
+  //   axios.post(URL)
   //     .then(res => {
   //       console.log(res)
   //     })
