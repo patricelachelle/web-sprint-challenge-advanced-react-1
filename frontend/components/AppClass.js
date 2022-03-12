@@ -41,6 +41,7 @@ export default class AppClass extends React.Component {
     
   }
   handleSubmit(event) {
+    this.state.email
     event.preventDefault()
   }   
   render() {
