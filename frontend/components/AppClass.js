@@ -32,25 +32,25 @@ export default class AppClass extends React.Component {
       steps: 0
     }))
   }
-  // postApiResults = () => {
-  //   axios.post(URL)
-  //     .then(res => {
-  //       console.log(res)
-  //     })
-  //     .catch(err => {
-  //       console.log(err)
-  //     })
-  // }
+  postApiResults = () => {
+    axios.post(URL)
+      .then(res => {
+        console.log(res)
+      })
+      .catch(err => {
+        console.log(err)
+      })
+  }
 
-  // getApiResults = () => {
-  //   axios.post(URL)
-  //     .then(res => {
-  //       console.log(res)
-  //     })
-  //     .catch(err => {
-  //       console.log(err)
-  //     })
-  // }
+  getApiResults = () => {
+    axios.post(URL)
+      .then(res => {
+        console.log(res)
+      })
+      .catch(err => {
+        console.log(err)
+      })
+  }
   handleChange = (event) => {
     this.setState({
       email: event.target.value
